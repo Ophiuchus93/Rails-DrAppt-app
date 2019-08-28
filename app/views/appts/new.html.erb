@@ -1,0 +1,15 @@
+<%# could not figure out the syntax to make the form work. the f.select :user_id %>
+<%# is the line that was giving me the error %>
+
+<h1>Make an Appointment</h1>
+<%= form_with(model: [@doctor, @appt],local: true, class: "ui form") do |f| %>
+  <%= f.label :user %>
+  <%= f.select :user_id { |user| [user.full_name, user.id] } %>
+  <br />
+  <%= f.label :time %>
+  <%= f.select :time %>
+  <br />
+  <%= f.submit nil, class: "ui green button inverted" %>
+  <% end %>
+
+
